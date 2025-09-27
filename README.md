@@ -7,7 +7,7 @@ AI-powered stock market predictor for Indian stocks (NSE/BSE) using Next.js 15, 
 
 ## 🌐 Live Demo
 
-**Production**: https://indian-stock-predictor.vercel.app
+**Production**: https://stock-predictor-cvpe9b9x8-kp-op.vercel.app
 
 The application is automatically deployed to Vercel using GitHub Actions on every push to the main branch. The live demo URL is dynamically updated after each successful deployment.
 
