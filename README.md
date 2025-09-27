@@ -52,7 +52,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 🌐 Live Demo
 
-**Production**: https://stock-predictor-7r3zrwasm-kp-op.vercel.app
+**Production**: https://indian-stock-predictor.vercel.app
 
 *This deployment link is automatically updated by GitHub Actions.*
 
