@@ -1,15 +1,15 @@
 # Indian Stock Predictor 🇮🇳📈
 
 [![Deploy to Vercel](https://github.com/EmperorKP/indian-stock-predictor/actions/workflows/deploy.yml/badge.svg)](https://github.com/EmperorKP/indian-stock-predictor/actions/workflows/deploy.yml)
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://stock-predictor-9k0dd9g99-kp-op.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://indian-stock-predictor.vercel.app)
 
 AI-powered stock market predictor for Indian stocks (NSE/BSE) using Next.js 15, TypeScript, and TensorFlow.js with real-time data from Yahoo Finance API.
 
 ## 🌐 Live Demo
 
-**Production**: https://stock-predictor-9k0dd9g99-kp-op.vercel.app
+**Production**: https://indian-stock-predictor.vercel.app
 
-The application is automatically deployed to Vercel using GitHub Actions on every push to the main branch.
+The application is automatically deployed to Vercel using GitHub Actions on every push to the main branch. The live demo URL is dynamically updated after each successful deployment.
 
 ## ✨ Features
 
@@ -211,7 +211,7 @@ This project is open source and available under the [MIT License](LICENSE).
 - **🎯 High Accuracy**: AI confidence scoring (45-90%) with trend analysis
 - **📱 Modern UI**: Responsive design with Tailwind CSS
 - **�️ Robust**: Error handling, timeout protection, and smart fallbacks
-- **🧹 Clean Architecture**: Optimized build with no debug endpoints or unused code
+- **🧹 Clean Architecture**: Well-structured and maintainable codebase
 
 ## Tech Stack
 
@@ -226,24 +226,22 @@ This project is open source and available under the [MIT License](LICENSE).
 ## Project Structure
 
 ```
-stock-predictor/                      # 🧹 Clean, optimized structure
+stock-predictor/
 ├── src/
 │   ├── app/
 │   │   ├── api/
-│   │   │   └── stock/route.ts        # ✅ Production Yahoo Finance API
-│   │   ├── globals.css               # ✅ Tailwind CSS styles
-│   │   ├── layout.tsx               # ✅ App layout
-│   │   └── page.tsx                 # ✅ ML prediction interface
+│   │   │   └── stock/route.ts        # Yahoo Finance API integration
+│   │   ├── globals.css               # Tailwind CSS styles
+│   │   ├── layout.tsx               # App layout
+│   │   └── page.tsx                 # ML prediction interface
 │   ├── components/
-│   │   └── StockChart.tsx           # ✅ Interactive financial charts
+│   │   └── StockChart.tsx           # Interactive financial charts
 │   └── lib/
-│       └── ml-utils.ts              # ✅ Optimized TensorFlow.js ML
+│       └── ml-utils.ts              # TensorFlow.js ML utilities
 ├── package.json                      # Dependencies & scripts
 ├── tailwind.config.ts               # Tailwind configuration
 ├── tsconfig.json                    # TypeScript configuration
 └── README.md                        # Documentation
-
-❌ Removed: debug APIs, unused functions, excessive logging
 ```
 
 ## 🚀 Quick Start
@@ -254,15 +252,12 @@ stock-predictor/                      # 🧹 Clean, optimized structure
 - npm or yarn
 - Modern web browser with JavaScript enabled
 
-### Production Optimizations ✨
+### Key Features ✨
 
-This application has been **production-optimized** with:
-- ❌ **Removed**: Debug APIs (`/api/debug`, `/api/debug-ml`)
-- ❌ **Removed**: Unused functions (`predictMultipleDays`)
-- ❌ **Removed**: Excessive console logging and debug outputs
-- ❌ **Removed**: Outdated API documentation and unused files
-- ✅ **Clean**: Minimal bundle size and fast loading
-- ✅ **Secure**: No exposed debug endpoints or sensitive data
+- ✅ **Production Ready**: Optimized build with minimal bundle size
+- ✅ **Fast Performance**: Next.js 15 with Turbopack for rapid loading
+- ✅ **Secure**: Clean API endpoints with proper error handling
+- ✅ **Type-Safe**: Full TypeScript implementation for reliability
 
 ### Installation
 
@@ -395,10 +390,10 @@ The application provides comprehensive performance metrics:
 ## 🚀 Production Ready
 
 ### ✅ **Optimized Codebase**
-- **Clean Architecture**: Removed all debug endpoints and unused functions
-- **Minimal Logging**: Production-ready with essential error handling only
-- **Optimized Bundle**: No unused dependencies or excessive console outputs
-- **Security**: Cleaned environment variables, no exposed debug information
+- **Clean Architecture**: Well-structured components and API endpoints
+- **Essential Logging**: Production-ready with proper error handling
+- **Optimized Bundle**: Minimal dependencies for fast loading
+- **Security**: Secure API endpoints with proper validation
 
 ### ✅ **Current Data Sources**
 

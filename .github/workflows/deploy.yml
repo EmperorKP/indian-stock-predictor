@@ -28,6 +28,7 @@ jobs:
         
       - name: Deploy to Vercel (Production)
         if: github.ref == 'refs/heads/main'
+        id: vercel-production
         uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
@@ -37,8 +38,29 @@ jobs:
           
       - name: Deploy to Vercel (Preview)
         if: github.event_name == 'pull_request'
+        id: vercel-preview
         uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.ORG_ID }}
           vercel-project-id: ${{ secrets.PROJECT_ID }}
+          
+      - name: Update README with deployment URL
+        if: github.ref == 'refs/heads/main'
+        run: |
+          DEPLOYMENT_URL="${{ steps.vercel-production.outputs.preview-url }}"
+          echo "Deployment URL: $DEPLOYMENT_URL"
+          
+          # Update README with actual deployment URL
+          sed -i.bak "s|https://stock-predictor-[a-zA-Z0-9-]*\.vercel\.app|$DEPLOYMENT_URL|g" README.md
+          sed -i.bak "s|\*\*Production\*\*: https://[^)]*|\*\*Production\*\*: $DEPLOYMENT_URL|g" README.md
+          
+          # Clean up backup file
+          rm README.md.bak
+          
+          # Commit updated README if there are changes
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git diff --staged --quiet || git commit -m "Update README with latest deployment URL: $DEPLOYMENT_URL"
+          git push
