@@ -101,18 +101,15 @@ vercel --prod
 
 ### GitHub Secrets Setup
 
-To enable automatic deployment, add these secrets to your GitHub repository:
+To enable automatic deployment, add these required secrets to your GitHub repository:
 
 1. Go to your repository → Settings → Secrets and variables → Actions
-2. Add the following secrets:
+2. Add the following secrets with your actual values:
+   - `VERCEL_TOKEN`: Your Vercel API token (get from [Vercel Account Settings](https://vercel.com/account/tokens))
+   - `ORG_ID`: Your Vercel organization ID (found in project settings)
+   - `PROJECT_ID`: Your Vercel project ID (found in project settings)
 
-```
-VERCEL_TOKEN=your_vercel_token
-ORG_ID=team_Hn6XwQkhlVCb4rvClzRekGpZ
-PROJECT_ID=prj_k0Yl4NtVUHG1ssPI6cFESxqEpTtq
-```
-
-**Get your Vercel token**: https://vercel.com/account/tokens
+> ⚠️ **Security Note**: Never commit actual secret values to your repository. Always use GitHub Secrets for sensitive data.
 
 ## 🔧 Configuration
 
