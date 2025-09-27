@@ -1,6 +1,205 @@
-# 🇮🇳 Indian Stock Price Predictor
+# Indian Stock Predictor 🇮🇳📈
 
-**Production-ready** web application for predicting Indian stock prices (NSE/BSE) using advanced machine learning and TensorFlow.js. Features optimized Yahoo Finance API integration with clean, efficient codebase and real-time predictions for major Indian stocks.
+[![Deploy to Vercel](https://github.com/EmperorKP/indian-stock-predictor/actions/workflows/deploy.yml/badge.svg)](https://github.com/EmperorKP/indian-stock-predictor/actions/workflows/deploy.yml)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://stock-predictor-9k0dd9g99-kp-op.vercel.app)
+
+AI-powered stock market predictor for Indian stocks (NSE/BSE) using Next.js 15, TypeScript, and TensorFlow.js with real-time data from Yahoo Finance API.
+
+## 🌐 Live Demo
+
+**Production**: https://stock-predictor-9k0dd9g99-kp-op.vercel.app
+
+The application is automatically deployed to Vercel using GitHub Actions on every push to the main branch.
+
+## ✨ Features
+
+- **Real-time Indian Stock Data**: Fetches live stock prices for NSE and BSE listed companies
+- **AI-Powered Predictions**: Uses TensorFlow.js for machine learning predictions
+- **Interactive Charts**: Beautiful visualizations with prediction overlays
+- **Smart Symbol Recognition**: Supports multiple Indian stock symbol formats
+- **Fast & Responsive**: Built with Next.js 15 and Turbopack for optimal performance
+- **Type-Safe**: Full TypeScript implementation for reliability
+- **Auto-Deployment**: Continuous deployment via GitHub Actions
+
+## 🚀 Supported Indian Stocks
+
+The app supports major Indian stocks including:
+- **Banking**: HDFCBANK, ICICIBANK, SBIN, AXISBANK
+- **IT**: TCS, INFY, WIPRO, HCLTECH
+- **Conglomerates**: RELIANCE, ADANIENTERPRISES
+- **Consumer**: HINDUNILVR, ITC, NESTLEIND
+- **Auto**: TATAMOTORS, MARUTI, BAJAJ-AUTO
+- **Pharma**: SUNPHARMA, DRREDDY, CIPLA
+
+## 🛠️ Technology Stack
+
+- **Frontend**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **ML/AI**: TensorFlow.js
+- **Charts**: Chart.js with React wrapper
+- **API**: Yahoo Finance (via web scraping)
+- **Build Tool**: Turbopack
+- **Deployment**: Vercel with GitHub Actions CI/CD
+
+## 📊 How It Works
+
+1. **Data Fetching**: Retrieves historical stock data from Yahoo Finance API
+2. **Data Processing**: Normalizes and prepares data for machine learning
+3. **ML Training**: Trains a neural network model using TensorFlow.js
+4. **Prediction**: Generates price predictions and confidence intervals
+5. **Visualization**: Displays interactive charts with historical and predicted data
+
+## 🏃‍♂️ Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+```bash
+git clone https://github.com/EmperorKP/indian-stock-predictor.git
+cd indian-stock-predictor
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Production Build
+
+```bash
+npm run build
+npm start
+```
+
+## 🚀 Deployment
+
+### Automatic Deployment (Recommended)
+
+The project uses GitHub Actions for automatic deployment to Vercel:
+
+1. **Push to main branch** → Automatic production deployment
+2. **Create pull request** → Automatic preview deployment
+
+### Manual Deployment
+
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Deploy to production
+vercel --prod
+```
+
+### GitHub Secrets Setup
+
+To enable automatic deployment, add these secrets to your GitHub repository:
+
+1. Go to your repository → Settings → Secrets and variables → Actions
+2. Add the following secrets:
+
+```
+VERCEL_TOKEN=your_vercel_token
+ORG_ID=team_Hn6XwQkhlVCb4rvClzRekGpZ
+PROJECT_ID=prj_k0Yl4NtVUHG1ssPI6cFESxqEpTtq
+```
+
+**Get your Vercel token**: https://vercel.com/account/tokens
+
+## 🔧 Configuration
+
+The app works out of the box with no additional configuration required. It uses Yahoo Finance's public API for stock data.
+
+## 📈 Usage
+
+1. Enter an Indian stock symbol (e.g., "TCS", "RELIANCE", "HDFCBANK")
+2. Select the exchange (NSE or BSE)
+3. Click "Predict Stock Price"
+4. View the interactive chart with:
+   - Historical price data
+   - ML predictions
+   - Confidence intervals
+   - Key metrics
+
+## 🧠 Machine Learning Models
+
+The app uses multiple ML approaches:
+
+- **Linear Regression**: Fast baseline predictions
+- **Neural Network**: Advanced pattern recognition
+- **Feature Engineering**: Technical indicators and trends
+- **Ensemble Methods**: Combines multiple models for better accuracy
+
+## 📊 Project Structure
+
+```
+indian-stock-predictor/
+├── .github/workflows/          # GitHub Actions for CI/CD
+├── src/
+│   ├── app/
+│   │   ├── api/stock/         # Stock data API endpoint
+│   │   ├── globals.css        # Global styles
+│   │   ├── layout.tsx         # Root layout component
+│   │   └── page.tsx           # Main application page
+│   ├── components/
+│   │   └── StockChart.tsx     # Interactive chart component
+│   └── lib/
+│       └── ml-utils.ts        # Machine learning utilities
+├── public/                    # Static assets
+├── .vercel/                   # Vercel configuration
+└── README.md                  # Project documentation
+```
+
+## 🎯 Accuracy & Limitations
+
+- **Educational Purpose**: This tool is for learning and research
+- **Not Financial Advice**: Do not use for actual trading decisions
+- **Market Volatility**: Stock markets are inherently unpredictable
+- **Data Dependencies**: Accuracy depends on data quality and market conditions
+
+## 🔄 CI/CD Pipeline
+
+The project uses GitHub Actions for continuous integration and deployment:
+
+1. **Code Push** → Trigger workflow
+2. **Install Dependencies** → `npm ci`
+3. **Build Project** → `npm run build`
+4. **Deploy to Vercel** → Production or Preview
+5. **Update Live Site** → Automatic
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgments
+
+- Yahoo Finance for stock data
+- TensorFlow.js team for the ML framework
+- Next.js team for the amazing React framework
+- Chart.js for beautiful visualizations
+- Vercel for seamless deployment
+
+---
+
+**Disclaimer**: This application is for educational and research purposes only. Stock market predictions are inherently uncertain, and this tool should not be used as the sole basis for investment decisions. Always consult with financial professionals and do your own research before making investment choices.
 
 ## ✨ Features
 
