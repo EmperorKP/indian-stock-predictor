@@ -14,7 +14,7 @@ export interface PredictionResult {
 }
 
 // Process raw stock data for ML
-export const processStockData = (data: any): StockData => {
+export function processStockData(data: { 'Time Series (Daily)': Record<string, { '4. close': string }> }): { prices: number[], dates: string[], xs: number[] } {
   const timeSeries = data['Time Series (Daily)'];
   if (!timeSeries) {
     throw new Error('Invalid stock data format');
@@ -131,22 +131,16 @@ export const trainLinearRegressionModel = async (xs: number[], ys: number[]): Pr
     const finetuneEpochs = 100;
     
     // Initial training with higher learning rate
-    let history = await model.fit(xsTensor, ysTensor, {
-      epochs: initialEpochs,
-      batchSize: Math.min(8, Math.floor(xs.length / 6)),
-      verbose: 0,
-      shuffle: true,
-      validationSplit: 0.2,
-      callbacks: {
-        onEpochEnd: (epoch, logs) => {
-          if (epoch % 40 === 0) {
-            // Training progress tracking
-          }
-        }
+  const history = await model.fit(xsTensor, ysTensor, {
+    epochs: 100,
+    batchSize: 32,
+    validationSplit: 0.2,
+    callbacks: {
+      onEpochEnd: (epoch: number) => {
+        // Training progress callback
       }
-    });
-    
-    // Fine-tuning with lower learning rate
+    }
+  });    // Fine-tuning with lower learning rate
     model.compile({
       optimizer: tf.train.adam(0.0001), // Lower learning rate
       loss: 'meanSquaredError',
@@ -168,10 +162,8 @@ export const trainLinearRegressionModel = async (xs: number[], ys: number[]): Pr
       }
     });
     
-    const finalLoss = finetuneHistory.history.loss[finetuneHistory.history.loss.length - 1];
-    const finalValLoss = finetuneHistory.history.val_loss ? finetuneHistory.history.val_loss[finetuneHistory.history.val_loss.length - 1] : 'N/A';
-
-    
+  // Training completed successfully
+  console.log('LSTM model training completed');    
     // Store all necessary data for predictions
     (model as any).normalizationParams = { xMin, xMax, yMin, yMax };
     (model as any).createAdvancedFeatures = createAdvancedFeatures;

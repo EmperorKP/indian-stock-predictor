@@ -72,7 +72,7 @@ const enhancedPredictStock = async (stockData: { date: string; price: number; }[
     // Try advanced ML prediction with timeout
     try {
       const processedData = processStockData({ 
-        'Time Series (Daily)': stockData.reduce((acc: any, item: any) => {
+        'Time Series (Daily)': stockData.reduce((acc: Record<string, { '4. close': string }>, item: { date: string; price: number }) => {
           acc[item.date] = { '4. close': item.price.toString() };
           return acc;
         }, {})
@@ -115,7 +115,7 @@ const enhancedPredictStock = async (stockData: { date: string; price: number; }[
         changePercent: parseFloat(changePercent.toFixed(2))
       };
       
-    } catch (mlError) {
+    } catch {
       return fastResult;
     }
     

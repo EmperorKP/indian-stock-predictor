@@ -39,7 +39,7 @@ async function fetchFromYahooFinance(symbol: string): Promise<Array<{ date: stri
     }
     
     return null;
-  } catch (error) {
+  } catch {
     return null;
   }
 }
@@ -95,7 +95,7 @@ export async function GET(request: NextRequest) {
       suggestions: ['RELIANCE', 'TCS', 'INFY', 'HDFCBANK', 'ICICIBANK', 'SBIN']
     }, { status: 503 });
 
-  } catch (error) {
+  } catch {
     return NextResponse.json({
       success: false,
       error: 'Server error while fetching stock data',
