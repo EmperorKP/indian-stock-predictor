@@ -1,7 +1,7 @@
 # Indian Stock Predictor 🇮🇳📈
 
 [![Deploy to Vercel](https://github.com/EmperorKP/indian-stock-predictor/actions/workflows/deploy.yml/badge.svg)](https://github.com/EmperorKP/indian-stock-predictor/actions/workflows/deploy.yml)
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://stock-predictor-9k0dd9g99-kp-op.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](stock-predictor-six.vercel.app)
 
 AI-powered stock market predictor for Indian stocks (NSE/BSE) using Next.js 15, TypeScript, and TensorFlow.js with real-time data from Yahoo Finance API.
 
